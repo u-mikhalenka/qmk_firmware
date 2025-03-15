@@ -43,10 +43,10 @@ const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
 
 const uint16_t  PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [LAYER_BASE] = LAYOUT_voyager(
-    KC_EQUAL,       KC_EXLM,        KC_AT,          KC_LPRN,        KC_RPRN,        KC_LABK,                                        KC_RABK,        KC_LBRC,        KC_RBRC,        KC_EQUAL,       KC_MINUS,       KC_MINUS,
-    KC_TRANSPARENT, KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,                                           KC_Y,           KC_U,           KC_I,           KC_O,           KC_P,           KC_BSLS,
-    U_CAPS,         HOME_A,         HOME_S,         HOME_D,         HOME_F,         KC_G,                                           KC_H,           HOME_J,         HOME_K,         HOME_L,         HOME_SCLN,      KC_QUOTE,
-    U_LANG,         KC_Z,           KC_X,           KC_C,           ALL_T(KC_V),    KC_B,                                           KC_N,           ALL_T(KC_M),    KC_COMMA,       KC_DOT,         KC_SLASH,       KC_BSPC,
+    KC_EQUAL,       KC_EXLM,        KC_AT,          KC_LPRN,        KC_RPRN,             KC_LABK,                                        KC_RABK,        KC_LBRC,        KC_RBRC,        KC_EQUAL,       KC_MINUS,       KC_MINUS,
+    KC_TRANSPARENT, KC_Q,           ALL_T(KC_W),    KC_E,           KC_R,                KC_T,                                           KC_Y,           KC_U,           KC_I,           KC_O,           KC_P,           KC_BSLS,
+    U_CAPS,         HOME_A,         HOME_S,         HOME_D,         HOME_F,              KC_G,                                           KC_H,           HOME_J,         HOME_K,         HOME_L,         HOME_SCLN,      KC_QUOTE,
+    U_LANG,         KC_Z,           KC_X,           KC_C,           LT(LAYER_NUM, KC_V), KC_B,                                           KC_N,           ALL_T(KC_M),    KC_COMMA,       KC_DOT,         KC_SLASH,       KC_BSPC,
                                                     U_SHIFT,        LT(LAYER_FN,KC_TAB),                            LT(LAYER_NUM_LEFT,KC_ENTER), LT(LAYER_NAV,KC_SPACE)
   ),
   [LAYER_GAME] = LAYOUT_voyager(
