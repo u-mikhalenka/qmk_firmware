@@ -32,6 +32,15 @@ enum custom_keycodes {
   RGB_SLD = ML_SAFE_RANGE,
 };
 
+const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
+    LAYOUT(
+        'L', 'L', 'L', 'L', 'L','L',       'R', 'R', 'R', 'R', 'R', 'R',
+        'L', 'L', 'L', 'L', 'L','L',       'R', 'R', 'R', 'R', 'R', 'R',
+        'L', 'L', 'L', 'L', 'L','L',       'R', 'R', 'R', 'R', 'R', 'R',
+        'L', 'L', 'L', 'L', 'L','L',       'R', 'R', 'R', 'R', 'R', 'R',
+                            '*', '*',      '*', '*'
+    );
+
 const uint16_t  PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [LAYER_BASE] = LAYOUT_voyager(
     KC_EQUAL,       KC_EXLM,        KC_AT,          KC_LPRN,        KC_RPRN,        KC_LABK,                                        KC_RABK,        KC_LBRC,        KC_RBRC,        KC_EQUAL,       KC_MINUS,       KC_MINUS,
