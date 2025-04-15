@@ -1,5 +1,7 @@
 #include QMK_KEYBOARD_H
 #include "version.h"
+#include "print.h"
+
 #define MOON_LED_LEVEL LED_LEVEL
 #define ML_SAFE_RANGE SAFE_RANGE
 
@@ -120,30 +122,23 @@ enum custom_keycodes {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-      case RGB_SLD:
+        case RGB_SLD:
         if (record->event.pressed) {
-          rgblight_mode(1);
+            rgblight_mode(1);
         }
         return false;
     }
     return true;
-  }
+}
 
-  bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
-      switch (keycode) {
-          default:
-              // Do not select the hold action when another key is tapped.
-              return false;
-      }
-  }
-
-  bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
-      switch (keycode) {
-          case U_SHIFT:
-              // Immediately select the hold action when another key is pressed.
-              return true;
-          default:
-              // Do not select the hold action when another key is pressed.
-              return false;
-      }
-  }
+bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case U_SHIFT:
+            print("return true from hold on other keypress");
+            // Immediately select the hold action when another key is pressed.
+            return true;
+        default:
+            // Do not select the hold action when another key is pressed.
+            return false;
+    }
+}
