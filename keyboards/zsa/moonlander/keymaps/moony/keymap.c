@@ -31,11 +31,11 @@ const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM = LAYOUT(
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [LAYER_BASE] = voyager_layout_wrapper_custom(
-        LAYER_BASE_L1, _______, _______, LAYER_BASE_R1,
-        LAYER_BASE_L2, _______, _______, LAYER_BASE_R2,
-        LAYER_BASE_L3, _______, _______, LAYER_BASE_R3,
-        LAYER_BASE_L4,                   LAYER_BASE_R4,
-        _______, _______, _______, _______, _______,    _______, _______, _______, _______, _______,
+        NUMBER_ROW_L,  _______, _______,  NUMBER_ROW_R,
+        LAYER_BASE_L2, _______, KC_EQUAL, LAYER_BASE_R2,
+        LAYER_BASE_L3, KC_DEL,  KC_BSPC,  LAYER_BASE_R3,
+        LAYER_BASE_L4,                    LAYER_BASE_R4,
+        _______, _______, _______, _______, LT(LAYER_FN, KC_SPC),    _______, KC_LBRC, KC_RBRC, _______, _______,
         _______,                         _______,
         LAYER_BASE_LT, _______, _______, LAYER_BASE_RT
       ),

@@ -36,6 +36,9 @@ enum custom_keycodes {
   RGB_SLD = ML_SAFE_RANGE,
 };
 
+#define NUMBER_ROW_L  KC_EQUAL, KC_1, KC_2, KC_3, KC_4, KC_5
+#define NUMBER_ROW_R  KC_6,     KC_7, KC_8, KC_9, KC_0, KC_MINUS
+
 // Base layer
 #define LAYER_BASE_L1 KC_EQUAL,       KC_EXLM,        KC_AT,          KC_LPRN,        KC_RPRN,             KC_LABK
 #define LAYER_BASE_L2 KC_TRANSPARENT, KC_Q,           ALL_T(KC_W),    KC_E,           KC_R,                KC_T
