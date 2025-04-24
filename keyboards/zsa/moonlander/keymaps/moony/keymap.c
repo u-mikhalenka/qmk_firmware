@@ -24,7 +24,7 @@ const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM = LAYOUT(
     'L', 'L', 'L', 'L', 'L', 'L', 'L', 'R', 'R', 'R', 'R', 'R', 'R', 'R',
     'L', 'L', 'L', 'L', 'L', 'L', 'L', 'R', 'R', 'R', 'R', 'R', 'R', 'R',
     'L', 'L', 'L', 'L', 'L', 'L',           'R', 'R', 'R', 'R', 'R', 'R',
-    'L', 'L', 'L', 'L', 'L', '*',           '*', 'R', 'R', 'R', 'R', 'R',
+    '*', '*', '*', '*', '*', '*',           '*', '*', '*', '*', '*', '*',
     '*', '*', '*',                          '*', '*', '*'
   );
 
@@ -57,15 +57,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,                            _______,
         LAYER_NAV_LT, _______,     _______, LAYER_NAV_RT
       ),
-      [LAYER_FN] = voyager_layout_wrapper_custom(
-        LAYER_FN_L1, _______,   _______, LAYER_FN_R1,
-        LAYER_FN_L2, _______,   _______, LAYER_FN_R2,
-        LAYER_FN_L3, _______,   _______, LAYER_FN_R3,
-        LAYER_FN_L4,                     LAYER_FN_R4,
-        _______, _______, _______, _______, _______,    _______, _______, _______, _______, _______,
-        _______,                         _______,
-        LAYER_FN_LT, _______,   _______, LAYER_FN_RT
-      ),
       [LAYER_NUM] = voyager_layout_wrapper_custom(
         LAYER_NUM_L1, _______,   _______, LAYER_NUM_R1,
         LAYER_NUM_L2, _______,   _______, LAYER_NUM_R2,
@@ -74,6 +65,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, _______, _______, _______, _______,    _______, _______, _______, _______, _______,
         _______,                         _______,
         LAYER_NUM_LT, _______,  _______, LAYER_NUM_RT
+      ),
+      [LAYER_FN] = voyager_layout_wrapper_custom(
+        LAYER_FN_L1, _______,   _______, LAYER_FN_R1,
+        LAYER_FN_L2, _______,   _______, LAYER_FN_R2,
+        LAYER_FN_L3, _______,   _______, LAYER_FN_R3,
+        LAYER_FN_L4,                     LAYER_FN_R4,
+        _______, _______, _______, _______, _______,    _______, _______, _______, _______, _______,
+        _______,                         _______,
+        LAYER_FN_LT, _______,   _______, LAYER_FN_RT
       ),
       [LAYER_SYS] = voyager_layout_wrapper_custom(
         LAYER_SYS_L1, _______,   _______, LAYER_SYS_R1,
