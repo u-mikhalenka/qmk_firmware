@@ -35,7 +35,13 @@
 enum custom_keycodes {
   RGB_SLD = SAFE_RANGE,
   ARROW,
-  ARROW_FN
+  ARROW_FN,
+  SMILE_HAPPY,     // :-)
+  SMILE_LAUGHING,  // xD
+  SMILE_SAD,       // :-(
+  SMILE_SURPRISED, // :O
+  SMILE_THINKING,  // :?
+  SMILE_SKEPTICAL  // :-/
 };
 
 #define NUMBER_ROW_L  KC_EQUAL, KC_1, KC_2, KC_3, KC_4, KC_5
@@ -119,17 +125,18 @@ enum custom_keycodes {
 #define LAYER_SYS_L2 RGB_SAI,             RGB_SAD,             KC_AUDIO_MUTE,       KC_AUDIO_VOL_UP,      KC_AUDIO_VOL_DOWN,    KC_TRANSPARENT
 #define LAYER_SYS_L3 RGB_HUI,             RGB_HUD,             KC_MEDIA_PREV_TRACK, KC_MEDIA_PLAY_PAUSE,  KC_MEDIA_NEXT_TRACK,  (LAYER_GAME)
 #define LAYER_SYS_L4 KC_TRANSPARENT,      KC_TRANSPARENT,      KC_TRANSPARENT,      LSFT(KC_PSCR),        KC_PSCR,              (0)
+
 #define LAYER_SYS_R1 QK_BOOT,             QK_REBOOT,           KC_TRANSPARENT,      KC_PSCR,              KC_PAUSE,             PC_MODE
 #define LAYER_SYS_R2 KC_MS_ACCEL2,        KC_MS_WH_DOWN,       KC_MS_UP,            KC_MS_WH_UP,          KC_APPLICATION,       MAC_MODE
 #define LAYER_SYS_R3 KC_MS_ACCEL1,        KC_MS_LEFT,          KC_MS_DOWN,          KC_MS_RIGHT,          KC_TRANSPARENT,       KC_TRANSPARENT
 #define LAYER_SYS_R4 KC_MS_ACCEL0,        KC_TRANSPARENT,      KC_TRANSPARENT,      KC_TRANSPARENT,       KC_TRANSPARENT,       KC_DELETE
-#define LAYER_SYS_LT KC_MS_BTN1,          KC_MS_BTN2
-#define LAYER_SYS_RT KC_TRANSPARENT,      KC_TRANSPARENT
+#define LAYER_SYS_LT KC_TRANSPARENT,      KC_TRANSPARENT
+#define LAYER_SYS_RT KC_MS_BTN1,          KC_MS_BTN2
 
-const uint16_t PROGMEM left_bracket[] = {KC_M, KC_COMMA, COMBO_END};
-const uint16_t PROGMEM right_bracket[] = {KC_COMMA, KC_DOT, COMBO_END};
-const uint16_t PROGMEM backspace[] = {KC_H, HOME_J, COMBO_END};
-const uint16_t PROGMEM delete[] = {KC_N, KC_M, COMBO_END};
+const uint16_t PROGMEM backspace[] =     {KC_U,     KC_I,     COMBO_END};
+const uint16_t PROGMEM delete[] =        {KC_I,     KC_O,     COMBO_END};
+const uint16_t PROGMEM left_bracket[] =  {KC_M,     KC_COMMA, COMBO_END};
+const uint16_t PROGMEM right_bracket[] = {KC_COMMA, KC_DOT,   COMBO_END};
 
 combo_t key_combos[] = {
     COMBO(left_bracket, KC_LBRC),
@@ -152,6 +159,36 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case ARROW_FN:
             if (record->event.pressed) {
                 send_string("() => {}");
+            }
+            return false;
+        case SMILE_HAPPY:
+            if (record->event.pressed) {
+                send_string(":-)");
+            }
+            return false;
+        case SMILE_LAUGHING:
+            if (record->event.pressed) {
+                send_string("xD");
+            }
+            return false;
+        case SMILE_SAD:
+            if (record->event.pressed) {
+                send_string(":-(");
+            }
+            return false;
+        case SMILE_SURPRISED:
+            if (record->event.pressed) {
+                send_string(":O");
+            }
+            return false;
+        case SMILE_THINKING:
+            if (record->event.pressed) {
+                send_string(":?");
+            }
+            return false;
+        case SMILE_SKEPTICAL:
+            if (record->event.pressed) {
+                send_string(":-/");
             }
             return false;
     }
