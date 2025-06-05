@@ -26,6 +26,7 @@
 #define U_CAPS              LT(LAYER_NAV,KC_ESCAPE)
 #define U_LANG              LT(LAYER_SYS,KC_F13)
 #define U_SHIFT             MT(MOD_LSFT, KC_GRAVE)
+#define U_TAB               LT(LAYER_NUM,KC_TAB)
 #define PC_MODE             QK_MAGIC_UNSWAP_CTL_GUI
 #define MAC_MODE            QK_MAGIC_SWAP_CTL_GUI
 
@@ -54,7 +55,7 @@ enum custom_keycodes {
 #define LAYER_BASE_R2 KC_Y,           KC_U,           KC_I,           KC_O,           KC_P,                KC_DELETE
 #define LAYER_BASE_R3 KC_H,           HOME_J,         HOME_K,         HOME_L,         HOME_SCLN,           KC_QUOTE
 #define LAYER_BASE_R4 KC_N,           KC_M,           KC_COMMA,       KC_DOT,         ALL_T(KC_SLASH),     LT(LAYER_SYS, KC_BSLS)
-#define LAYER_BASE_LT U_SHIFT,  LT(LAYER_NUM,KC_TAB)
+#define LAYER_BASE_LT U_SHIFT,  U_TAB
 #define LAYER_BASE_RT LT(LAYER_FN, KC_ENTER), LT(LAYER_NAV,KC_SPACE)
 
 // Game layer
@@ -189,6 +190,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case U_SHIFT:
+        case U_TAB:
             // Immediately select the hold action when another key is pressed.
             return true;
         default:
