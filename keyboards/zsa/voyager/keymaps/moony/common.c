@@ -50,12 +50,12 @@ enum custom_keycodes {
 #define LAYER_BASE_L3 U_CAPS,         HOME_A,         HOME_S,         HOME_D,         HOME_F,              KC_G
 #define LAYER_BASE_L4 U_LANG,         ALL_T(KC_Z),    KC_X,           KC_C,           LT(LAYER_FN, KC_V),  KC_B
 //                   |---------------|---------------|---------------|---------------|--------------------|-----------------
-#define LAYER_BASE_R1 KC_RABK,        KC_LBRC,        KC_RBRC,        KC_EQUAL,       KC_NO,               KC_MINUS
-#define LAYER_BASE_R2 KC_Y,           KC_U,           KC_I,           KC_O,           KC_P,                KC_NO
+#define LAYER_BASE_R1 KC_RABK,        KC_LBRC,        KC_RBRC,        KC_EQUAL,       KC_MINUS,            KC_BSPC
+#define LAYER_BASE_R2 KC_Y,           KC_U,           KC_I,           KC_O,           KC_P,                KC_DELETE
 #define LAYER_BASE_R3 KC_H,           HOME_J,         HOME_K,         HOME_L,         HOME_SCLN,           KC_QUOTE
 #define LAYER_BASE_R4 KC_N,           KC_M,           KC_COMMA,       KC_DOT,         ALL_T(KC_SLASH),     LT(LAYER_SYS, KC_BSLS)
 #define LAYER_BASE_LT U_SHIFT,  LT(LAYER_NUM,KC_TAB)
-#define LAYER_BASE_RT KC_ENTER, LT(LAYER_NAV,KC_SPACE)
+#define LAYER_BASE_RT LT(LAYER_FN, KC_ENTER), LT(LAYER_NAV,KC_SPACE)
 
 // Game layer
 #define LAYER_GAME_L1 KC_ESCAPE,      KC_1,           KC_2,           KC_3,           KC_4,           KC_5
