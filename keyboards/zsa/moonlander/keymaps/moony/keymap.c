@@ -83,5 +83,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, _______, _______, _______, _______,    _______, _______, _______, _______, _______,
         _______,                         _______,
         LAYER_SYS_LT, _______,  _______, LAYER_SYS_RT
-      )
+      ),
+      [LAYER_NUML] = voyager_layout_wrapper_custom(
+        LAYER_NUML_L1, _______,   _______,  LAYER_NUML_R1,
+        LAYER_NUML_L2, _______,   _______,  LAYER_NUML_R2,
+        LAYER_NUML_L3, _______,   _______,  LAYER_NUML_R3,
+        LAYER_NUML_L4,                      LAYER_NUML_R4,
+        _______, _______, _______, _______, _______,    _______, _______, _______, _______, _______,
+            _______,                         _______,
+        LAYER_NUML_LT, _______,  _______, LAYER_NUML_RT
+      ),
+      [LAYER_FNL] = voyager_layout_wrapper_custom(
+          LAYER_FNL_L1, _______,   _______,  LAYER_FNL_R1,
+          LAYER_FNL_L2, _______,   _______,  LAYER_FNL_R2,
+          LAYER_FNL_L3, _______,   _______,  LAYER_FNL_R3,
+          LAYER_FNL_L4,                      LAYER_FNL_R4,
+          _______, _______, _______, _______, _______,    _______, _______, _______, _______, _______,
+              _______,                         _______,
+          LAYER_FNL_LT, _______,  _______, LAYER_FNL_RT
+      ),
 };

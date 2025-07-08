@@ -10,6 +10,8 @@
 #define LAYER_NUM           3
 #define LAYER_FN            4
 #define LAYER_SYS           5
+#define LAYER_NUML          6
+#define LAYER_FNL           7
 
 // Left-hand home row mods
 #define HOME_A              LGUI_T(KC_A)
@@ -23,10 +25,11 @@
 #define HOME_L              LALT_T(KC_L)
 #define HOME_SCLN           RGUI_T(KC_SCLN)
 
-#define U_CAPS              LT(LAYER_NAV,KC_ESCAPE)
-#define U_LANG              LT(LAYER_SYS,KC_F13)
-#define U_SHIFT             MT(MOD_LSFT, KC_GRAVE)
-#define U_TAB               LT(LAYER_NUM,KC_TAB)
+#define U_CAPS              LT(LAYER_NAV,  KC_ESCAPE)
+#define U_LANG              LT(LAYER_SYS,  KC_F13)
+#define U_SHIFT             MT(MOD_LSFT,   KC_GRAVE)
+#define U_ENTER             LT(LAYER_FNL,  KC_ENTER)
+#define U_TAB               LT(LAYER_NUM,  KC_TAB)
 #define PC_MODE             QK_MAGIC_UNSWAP_CTL_GUI
 #define MAC_MODE            QK_MAGIC_SWAP_CTL_GUI
 
@@ -56,25 +59,25 @@ enum custom_keycodes {
 #define LAYER_BASE_R3 KC_H,           HOME_J,         HOME_K,         HOME_L,         HOME_SCLN,           KC_QUOTE
 #define LAYER_BASE_R4 KC_N,           KC_M,           KC_COMMA,       KC_DOT,         ALL_T(KC_SLASH),     LT(LAYER_SYS, KC_BSLS)
 #define LAYER_BASE_LT U_SHIFT,  U_TAB
-#define LAYER_BASE_RT LT(LAYER_FN, KC_ENTER), LT(LAYER_NAV,KC_SPACE)
+#define LAYER_BASE_RT U_ENTER, LT(LAYER_NAV,KC_SPACE)
 
 // Game layer
-#define LAYER_GAME_L1 KC_ESCAPE,      KC_1,           KC_2,           KC_3,           KC_4,           KC_5
-#define LAYER_GAME_L2 KC_TAB,         KC_Q,           KC_W,           KC_E,           KC_R,           KC_T
-#define LAYER_GAME_L3 KC_LEFT_CTRL,   KC_A,           KC_S,           KC_D,           KC_F,           KC_G
-#define LAYER_GAME_L4 KC_LEFT_SHIFT,  KC_Z,           KC_X,           KC_C,           KC_V,           KC_B
-#define LAYER_GAME_R1 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT
-#define LAYER_GAME_R2 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT
-#define LAYER_GAME_R3 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT
-#define LAYER_GAME_R4 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT
-#define LAYER_GAME_LT KC_SPACE,       KC_LEFT_ALT
-#define LAYER_GAME_RT KC_TRANSPARENT, KC_TRANSPARENT
+#define LAYER_GAME_L1 KC_ESCAPE,     KC_1,  KC_2,  KC_3,  KC_4,  KC_5
+#define LAYER_GAME_L2 KC_TAB,        KC_Q,  KC_W,  KC_E,  KC_R,  KC_T
+#define LAYER_GAME_L3 KC_LEFT_CTRL,  KC_A,  KC_S,  KC_D,  KC_F,  KC_G
+#define LAYER_GAME_L4 KC_LEFT_SHIFT, KC_Z,  KC_X,  KC_C,  KC_V,  KC_B
+#define LAYER_GAME_R1 KC_NO,         KC_NO, KC_NO, KC_NO, KC_NO, KC_NO
+#define LAYER_GAME_R2 KC_NO,         KC_NO, KC_NO, KC_NO, KC_NO, KC_NO
+#define LAYER_GAME_R3 KC_NO,         KC_NO, KC_NO, KC_NO, KC_NO, KC_NO
+#define LAYER_GAME_R4 KC_NO,         KC_NO, KC_NO, KC_NO, KC_NO, KC_NO
+#define LAYER_GAME_LT KC_SPACE, KC_LEFT_ALT
+#define LAYER_GAME_RT KC_NO,    KC_NO
 
 // Navigation layer
 #define LAYER_NAV_L1 KC_TRANSPARENT, KC_1,           KC_2,             KC_3,             KC_4,              KC_5
 #define LAYER_NAV_L2 KC_TRANSPARENT, KC_NO,          KC_NO,            KC_NO,            KC_NO,             ARROW
 #define LAYER_NAV_L3 KC_TRANSPARENT, KC_LEFT_GUI,    KC_LEFT_ALT,      KC_LEFT_CTRL,     KC_LEFT_SHIFT,     ARROW_FN
-#define LAYER_NAV_L4 KC_TRANSPARENT, LCTL(KC_Z),     LCTL(KC_X),       LCTL(KC_C),       LT(LAYER_FN, KC_V),KC_TRANSPARENT
+#define LAYER_NAV_L4 KC_TRANSPARENT, LCTL(KC_Z),     LCTL(KC_X),       LCTL(KC_C),       LCTL(KC_V),        KC_TRANSPARENT
 #define LAYER_NAV_R1 KC_6,           KC_7,           KC_8,             KC_9,             KC_0,              KC_MINUS
 #define LAYER_NAV_R2 KC_HOME,        KC_PGDN,        KC_PAGE_UP,       KC_END,           KC_INSERT,         KC_TRANSPARENT
 #define LAYER_NAV_R3 KC_LEFT,        KC_DOWN,        KC_UP,            KC_RIGHT,         KC_TRANSPARENT,    KC_TRANSPARENT
@@ -83,16 +86,31 @@ enum custom_keycodes {
 #define LAYER_NAV_RT KC_TRANSPARENT, KC_TRANSPARENT
 
 // Number layer
-#define LAYER_NUM_L1 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT
-#define LAYER_NUM_L2 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT
-#define LAYER_NUM_L3 KC_TRANSPARENT, KC_LEFT_GUI,    KC_LEFT_ALT,    KC_LEFT_CTRL,   KC_LEFT_SHIFT,  KC_TRANSPARENT
-#define LAYER_NUM_L4 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT
-#define LAYER_NUM_R1 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT
-#define LAYER_NUM_R2 KC_EQUAL,       KC_7,           KC_8,           KC_9,           KC_LABK,        KC_RABK
-#define LAYER_NUM_R3 KC_MINUS,       KC_4,           KC_5,           KC_6,           KC_TRANSPARENT, KC_TRANSPARENT
-#define LAYER_NUM_R4 KC_0,           KC_1,           KC_2,           KC_3,           KC_TRANSPARENT, KC_TRANSPARENT
-#define LAYER_NUM_LT KC_TRANSPARENT, KC_TRANSPARENT
-#define LAYER_NUM_RT KC_TRANSPARENT, KC_TRANSPARENT
+#define LAYER_NUM_L1 KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
+#define LAYER_NUM_L2 KC_NO,    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO
+#define LAYER_NUM_L3 KC_NO,    KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, KC_NO
+#define LAYER_NUM_L4 KC_NO,    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO
+#define LAYER_NUM_R1 KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
+#define LAYER_NUM_R2 KC_EQUAL, KC_7,    KC_8,    KC_9,    KC_LABK, KC_RABK
+#define LAYER_NUM_R3 KC_MINUS, KC_4,    KC_5,    KC_6,    KC_NO,   KC_NO
+#define LAYER_NUM_R4 KC_0,     KC_1,    KC_2,    KC_3,    KC_NO,   KC_NO
+#define LAYER_NUM_LT KC_NO, KC_NO
+#define LAYER_NUM_RT KC_NO, KC_NO
+
+// Number left layer
+#define LAYER_NUML_L1 KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS
+#define LAYER_NUML_L2 KC_NO,   KC_9,    KC_0,     KC_EQUAL, KC_MINUS, KC_NO
+#define LAYER_NUML_L3 KC_NO,   KC_5,    KC_6,     KC_7,     KC_8,     KC_NO
+#define LAYER_NUML_L4 KC_NO,   KC_1,    KC_2,     KC_3,     KC_4,     KC_NO
+// #define LAYER_NUML_L2 KC_NO,   KC_NO,   KC_7,    KC_8,    KC_9,    KC_EQUAL
+// #define LAYER_NUML_L3 KC_NO,   KC_NO,   KC_4,    KC_5,    KC_6,    KC_MINUS
+// #define LAYER_NUML_L4 KC_NO,   KC_NO,   KC_1,    KC_2,    KC_3,    KC_0
+#define LAYER_NUML_R1 KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
+#define LAYER_NUML_R2 KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO
+#define LAYER_NUML_R3 KC_NO,   KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, KC_NO
+#define LAYER_NUML_R4 KC_NO,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
+#define LAYER_NUML_LT KC_TRNS, KC_TRNS
+#define LAYER_NUML_RT KC_TRNS, KC_TRNS
 
 // Function layer
 #define LAYER_FN_L1 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT
@@ -106,11 +124,23 @@ enum custom_keycodes {
 #define LAYER_FN_LT KC_TRANSPARENT, KC_TRANSPARENT
 #define LAYER_FN_RT KC_APPLICATION, KC_TRANSPARENT
 
+// Function layer (left)
+#define LAYER_FNL_L1 KC_PAUSE, KC_PSCR, KC_TRNS, KC_TRNS, KC_F16,  KC_F17
+#define LAYER_FNL_L2 KC_F18,   KC_F19,  KC_F9,   KC_F8,   KC_F7,   KC_F12
+#define LAYER_FNL_L3 KC_F20,   KC_F21,  KC_F6,   KC_F5,   KC_F4,   KC_F11
+#define LAYER_FNL_L4 KC_F22,   KC_F23,  KC_F3,   KC_F2,   KC_F1,   KC_F10
+#define LAYER_FNL_R1 KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
+#define LAYER_FNL_R2 KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
+#define LAYER_FNL_R3 KC_TRNS,  KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, KC_NO
+#define LAYER_FNL_R4 KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
+#define LAYER_FNL_LT KC_APPLICATION,  KC_TRNS
+#define LAYER_FNL_RT KC_TRNS,         KC_TRNS
+
 // System layer
 #define LAYER_SYS_L1 RGB_VAI,             RGB_VAD,             RGB_SLD,             RGB_SPI,              RGB_SPD,              RGB_MODE_FORWARD
 #define LAYER_SYS_L2 RGB_SAI,             RGB_SAD,             KC_AUDIO_MUTE,       KC_AUDIO_VOL_UP,      KC_AUDIO_VOL_DOWN,    KC_TRANSPARENT
-#define LAYER_SYS_L3 RGB_HUI,             RGB_HUD,             KC_MEDIA_PREV_TRACK, KC_MEDIA_PLAY_PAUSE,  KC_MEDIA_NEXT_TRACK,  (LAYER_GAME)
-#define LAYER_SYS_L4 KC_TRANSPARENT,      KC_TRANSPARENT,      KC_TRANSPARENT,      LSFT(KC_PSCR),        KC_PSCR,              (0)
+#define LAYER_SYS_L3 RGB_HUI,             RGB_HUD,             KC_MEDIA_PREV_TRACK, KC_MEDIA_PLAY_PAUSE,  KC_MEDIA_NEXT_TRACK,  TO(LAYER_GAME)
+#define LAYER_SYS_L4 KC_TRANSPARENT,      UG_TOGG,             KC_TRANSPARENT,      LSFT(KC_PSCR),        KC_PSCR,              TO(0)
 
 #define LAYER_SYS_R1 QK_BOOT,             QK_REBOOT,           KC_TRANSPARENT,      KC_PSCR,              KC_PAUSE,             PC_MODE
 #define LAYER_SYS_R2 KC_MS_ACCEL2,        KC_MS_WH_DOWN,       KC_MS_UP,            KC_MS_WH_UP,          KC_APPLICATION,       MAC_MODE
